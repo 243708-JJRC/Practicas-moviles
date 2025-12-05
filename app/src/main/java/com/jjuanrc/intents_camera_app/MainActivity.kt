@@ -11,6 +11,7 @@ import android.view.Gravity
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.graphics.toColorInt
 
 class MainActivity : Activity() {
 
@@ -24,7 +25,7 @@ class MainActivity : Activity() {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
 
-            setBackgroundColor(Color.parseColor("#4A90E2"))
+            setBackgroundColor("#4A90E2".toColorInt())
 
             setPadding(50, 50, 50, 50)
         }
@@ -32,13 +33,13 @@ class MainActivity : Activity() {
         val btnBackground = GradientDrawable().apply {
             cornerRadius = 50f
             setColor(Color.WHITE)
-            setStroke(5, Color.parseColor("#1B75D1"))
+            setStroke(5, "#1B75D1".toColorInt())
         }
 
         val btnAbrirCamara = Button(this).apply {
             text = "Abrir Cámara"
             textSize = 20f
-            setTextColor(Color.parseColor("#1B75D1"))
+            setTextColor("#1B75D1".toColorInt())
             background = btnBackground
             setPadding(50, 35, 50, 35)
             setOnClickListener { abrirCamara() }
@@ -50,7 +51,7 @@ class MainActivity : Activity() {
             }
             background = GradientDrawable().apply {
                 cornerRadius = 20f
-                setColor(Color.parseColor("#EEEEEE"))
+                setColor("#EEEEEE".toColorInt())
                 setStroke(6, Color.DKGRAY)
             }
             scaleType = ImageView.ScaleType.CENTER_CROP
